@@ -13,6 +13,12 @@ return {
       vim.keymap.set("n", "\\", "<cmd>Neotree filesystem reveal float toggle<cr>")
     end,
     opts = {
+      window = {
+        mappings = {
+          ["v"] = "open_vsplit",
+          ["h"] = "open_split",
+        },
+      },
       filesystem = {
         filtered_items = {
           visible = true,
