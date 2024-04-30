@@ -5,9 +5,10 @@ return {
   config = function()
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<C-\\>", builtin.find_files, {})
-    vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+    vim.keymap.set("n", "<leader>g", builtin.live_grep, {})
+    vim.keymap.set("n", "<leader>p", builtin.lsp_document_symbols, {})
+    vim.keymap.set("n", "<leader>o", builtin.buffers, {})
+    vim.keymap.set("n", "<leader>h", builtin.help_tags, {})
 
     local actions = require("telescope.actions")
     require("telescope").setup({
