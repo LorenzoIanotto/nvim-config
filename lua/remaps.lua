@@ -13,3 +13,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- CLose current buffer
 vim.keymap.set("n", "<leader>x", "<cmd>bd<cr>")
+
+vim.keymap.set("", "è", "[", { remap = true })
+vim.keymap.set("", "+", "]", { remap = true })
