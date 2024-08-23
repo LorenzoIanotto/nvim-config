@@ -78,18 +78,24 @@ return {
       },
     })
 
+    local lspconfig = require("lspconfig")
+
+    if vim.fn.executable("gleam") == 1 then
+      lspconfig["gleam"].setup({})
+    end
+
     local handlers = {
       -- The first entry (without a key) will be the default handler
       -- and will be called for each installed server that doesn't have
       -- a dedicated handler.
       function(server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup({
+        lspconfig[server_name].setup({
           on_attach = on_attach,
           capabilities = capabilities,
         })
       end,
       ["lua_ls"] = function()
-        require("lspconfig").lua_ls.setup({
+        lspconfig.lua_ls.setup({
           on_attach = on_attach,
           capabilities = capabilities,
           settings = {
